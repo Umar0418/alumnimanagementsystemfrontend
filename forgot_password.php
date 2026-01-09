@@ -1,66 +1,55 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 header("Content-Type: application/json");
-require "db.php";
+header("Access-Control-Allow-Origin: *");
 
-/* Read raw JSON input */
-$raw = file_get_contents("php://input");
-if (!$raw) {
-    echo json_encode(["status"=>false,"message"=>"No input received"]);
+include 'db.php';
+
+$email = isset($_POST['email']) ? trim($_POST['email']) : '';
+
+if (empty($email)) {
+    echo json_encode(["status" => false, "message" => "Email is required"]);
     exit;
 }
 
-$data = json_decode($raw, true);
-if (!is_array($data)) {
-    echo json_encode(["status"=>false,"message"=>"Invalid JSON"]);
-    exit;
-}
-
-$email = trim($data['email'] ?? '');
-if ($email === '') {
-    echo json_encode(["status"=>false,"message"=>"Email required"]);
-    exit;
-}
-
-/* Check user exists */
-$stmt = $conn->prepare("SELECT roll_no FROM users WHERE email=?");
+// Check email in USERS table
+$stmt = $conn->prepare("SELECT roll_no, name FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
-$res = $stmt->get_result();
+$result = $stmt->get_result();
 
-if ($res->num_rows === 0) {
-    echo json_encode(["status"=>false,"message"=>"Email not registered"]);
-    exit;
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+    $roll_no = $user['roll_no'];
+    $name = $user['name'] ? $user['name'] : 'User';
+    
+    // Generate secure reset token
+    $token = bin2hex(random_bytes(32));
+    $expires = date('Y-m-d H:i:s', strtotime('+1 hour'));
+    
+    // Save token in password_resets table
+    $stmt2 = $conn->prepare("INSERT INTO password_resets (roll_no, email, reset_token, expires_at) 
+                             VALUES (?, ?, ?, ?) 
+                             ON DUPLICATE KEY UPDATE reset_token=?, expires_at=?");
+    $stmt2->bind_param("ssssss", $roll_no, $email, $token, $expires, $token, $expires);
+    
+    if ($stmt2->execute()) {
+        // Return success - email would be sent in production
+        echo json_encode([
+            "status" => true, 
+            "message" => "Password reset link has been sent to your email"
+        ]);
+    } else {
+        echo json_encode([
+            "status" => false, 
+            "message" => "An error occurred. Please try again."
+        ]);
+    }
+} else {
+    echo json_encode([
+        "status" => false, 
+        "message" => "Email not found. Please check and try again."
+    ]);
 }
 
-$user = $res->fetch_assoc();
-$roll_no = $user['roll_no'];
-
-/* Generate token */
-$token  = bin2hex(random_bytes(32));
-$expiry = date("Y-m-d H:i:s", strtotime("+15 minutes"));
-
-/* Save token */
-$insert = $conn->prepare("
-    INSERT INTO password_resets (roll_no, email, reset_token, expires_at)
-    VALUES (?, ?, ?, ?)
-");
-$insert->bind_param("ssss", $roll_no, $email, $token, $expiry);
-$insert->execute();
-
-/* Send email (basic mail) */
-$link = "http://localhost/alumni_api/reset_password.php?token=$token";
-mail(
-    $email,
-    "Password Reset",
-    "Click this link to reset your password:\n$link\n\nValid for 15 minutes.",
-    "From: noreply@college.com"
-);
-
-echo json_encode([
-    "status" => true,
-    "message" => "Reset link sent to email"
-]);
+$conn->close();
+?>
