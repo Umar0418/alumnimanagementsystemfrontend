@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F9FAFB"
+    tools:context=".JobApplicationActivity">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:background="@android:color/white"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Apply for Job"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1F2937"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Job Info Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tvCompanyInitial"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/circle_light_gray"
+                        android:gravity="center"
+                        android:text="G"
+                        android:textColor="#374151"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="12dp">
+
+                        <TextView
+                            android:id="@+id/tvJobTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Frontend Developer Intern"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#1F2937"/>
+
+                        <TextView
+                            android:id="@+id/tvCompanyName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Google"
+                            android:textSize="13sp"
+                            android:textColor="#6B7280"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Personal Information Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Personal Information"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1F2937"/>
+
+            <!-- Full Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Full Name *"
+                android:textSize="14sp"
+                android:textColor="#374151"/>
+
+            <EditText
+                android:id="@+id/etFullName"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/input_modern"
+                android:paddingHorizontal="16dp"
+                android:hint="Enter your full name"
+                android:textSize="14sp"
+                android:textColor="#1F2937"
+                android:textColorHint="#9CA3AF"
+                android:inputType="textPersonName"/>
+
+            <!-- Email -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Email Address *"
+                android:textSize="14sp"
+                android:textColor="#374151"/>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/input_modern"
+                android:paddingHorizontal="16dp"
+                android:hint="Enter your email"
+                android:textSize="14sp"
+                android:textColor="#1F2937"
+                android:textColorHint="#9CA3AF"
+                android:inputType="textEmailAddress"/>
+
+            <!-- Phone -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Phone Number *"
+                android:textSize="14sp"
+                android:textColor="#374151"/>
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/input_modern"
+                android:paddingHorizontal="16dp"
+                android:hint="Enter your phone number"
+                android:textSize="14sp"
+                android:textColor="#1F2937"
+                android:textColorHint="#9CA3AF"
+                android:inputType="phone"/>
+
+            <!-- Professional Information Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Professional Information"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1F2937"/>
+
+            <!-- Experience -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Experience Level"
+                android:textSize="14sp"
+                android:textColor="#374151"/>
+
+            <Spinner
+                android:id="@+id/spinnerExperience"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/input_modern"
+                android:paddingHorizontal="16dp"/>
+
+            <!-- Skills -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Key Skills *"
+                android:textSize="14sp"
+                android:textColor="#374151"/>
+
+            <EditText
+                android:id="@+id/etSkills"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/input_modern"
+                android:paddingHorizontal="16dp"
+                android:hint="e.g., React, JavaScript, TypeScript"
+                android:textSize="14sp"
+                android:textColor="#1F2937"
+                android:textColorHint="#9CA3AF"/>
+
+            <!-- Current/Last Company -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Current/Last Company (Optional)"
+                android:textSize="14sp"
+                android:textColor="#374151"/>
+
+            <EditText
+                android:id="@+id/etCurrentCompany"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/input_modern"
+                android:paddingHorizontal="16dp"
+                android:hint="Enter company name"
+                android:textSize="14sp"
+                android:textColor="#1F2937"
+                android:textColorHint="#9CA3AF"/>
+
+            <!-- LinkedIn Profile -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="LinkedIn Profile (Optional)"
+                android:textSize="14sp"
+                android:textColor="#374151"/>
+
+            <EditText
+                android:id="@+id/etLinkedIn"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/input_modern"
+                android:paddingHorizontal="16dp"
+                android:hint="https://linkedin.com/in/yourprofile"
+                android:textSize="14sp"
+                android:textColor="#1F2937"
+                android:textColorHint="#9CA3AF"
+                android:inputType="textUri"/>
+
+            <!-- Resume Upload Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Documents"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1F2937"/>
+
+            <!-- Resume Upload -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Resume/CV *"
+                android:textSize="14sp"
+                android:textColor="#374151"/>
+
+            <LinearLayout
+                android:id="@+id/layoutUploadResume"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/upload_bg"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_upload"
+                    app:tint="#6B7280"/>
+
+                <TextView
+                    android:id="@+id/tvResumeFileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Tap to upload resume (PDF, DOC)"
+                    android:textSize="13sp"
+                    android:textColor="#6B7280"/>
+
+            </LinearLayout>
+
+            <!-- Cover Letter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Cover Letter (Optional)"
+                android:textSize="14sp"
+                android:textColor="#374151"/>
+
+            <EditText
+                android:id="@+id/etCoverLetter"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/input_modern"
+                android:padding="16dp"
+                android:gravity="top"
+                android:hint="Tell us why you're a great fit for this role..."
+                android:textSize="14sp"
+                android:textColor="#1F2937"
+                android:textColorHint="#9CA3AF"
+                android:inputType="textMultiLine"/>
+
+            <!-- Expected Salary -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Expected Salary (Optional)"
+                android:textSize="14sp"
+                android:textColor="#374151"/>
+
+            <EditText
+                android:id="@+id/etExpectedSalary"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/input_modern"
+                android:paddingHorizontal="16dp"
+                android:hint="e.g., ₹5-6 LPA"
+                android:textSize="14sp"
+                android:textColor="#1F2937"
+                android:textColorHint="#9CA3AF"/>
+
+            <!-- Space for button -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Submit Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:elevation="8dp">
+
+        <Button
+            android:id="@+id/btnSubmitApplication"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Submit Application"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#2563EB"
+            app:cornerRadius="12dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

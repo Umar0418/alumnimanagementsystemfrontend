@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F9FAFB"
+    tools:context=".EditAlumniProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1F2937"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView style="@style/FormLabel" android:text="Full Name"/>
+            <EditText android:id="@+id/etEditName" style="@style/FormInput"/>
+
+            <TextView style="@style/FormLabel" android:text="Company"/>
+            <EditText android:id="@+id/etEditCompany" style="@style/FormInput"/>
+
+            <!-- CORRECTED: Removed the non-existent Job Title field -->
+
+            <TextView style="@style/FormLabel" android:text="Location"/>
+            <EditText android:id="@+id/etEditLocation" style="@style/FormInput"/>
+
+            <TextView style="@style/FormLabel" android:text="Department"/>
+            <EditText android:id="@+id/etEditDepartment" style="@style/FormInput"/>
+
+            <TextView style="@style/FormLabel" android:text="Batch (Year)"/>
+            <EditText android:id="@+id/etEditBatch" style="@style/FormInput" android:inputType="number"/>
+
+            <Button
+                android:id="@+id/btnSaveChanges"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:text="Save Changes"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

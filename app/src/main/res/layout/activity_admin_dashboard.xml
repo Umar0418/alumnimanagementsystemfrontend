@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".AdminDashboardActivity">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header with sky blue gradient -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_header_skyblue"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome, Admin"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:alpha="0.9"/>
+                    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dashboard"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+                
+            <ImageView
+                android:id="@+id/ivLogout"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_logout"
+                android:padding="10dp"
+                android:background="@drawable/circle_button_bg"
+                app:tint="@color/white"/>
+        </RelativeLayout>
+
+        <!-- Content Area -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Stats Grid -->
+            <GridLayout
+                android:id="@+id/statsGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:useDefaultMargins="true">
+
+                <!-- Alumni Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardAlumni"
+                    style="@style/DashboardCard"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout style="@style/DashboardCardContent">
+                        <ImageView style="@style/DashboardStatIcon" android:src="@drawable/ic_dashboard_alumni" android:background="@drawable/stat_alumni_bg"/>
+                        <TextView android:id="@+id/tvAlumniCount" style="@style/DashboardStatCount" android:text="0" android:textColor="@color/text_primary"/>
+                        <TextView style="@style/DashboardStatLabel" android:text="Alumni" android:textStyle="bold"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Students Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardStudents"
+                    style="@style/DashboardCard"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout style="@style/DashboardCardContent">
+                        <ImageView style="@style/DashboardStatIcon" android:src="@drawable/ic_dashboard_students" android:background="@drawable/stat_students_bg"/>
+                        <TextView android:id="@+id/tvStudentCount" style="@style/DashboardStatCount" android:text="0" android:textColor="@color/text_primary"/>
+                        <TextView style="@style/DashboardStatLabel" android:text="Students" android:textStyle="bold"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Events Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardEvents"
+                    style="@style/DashboardCard"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout style="@style/DashboardCardContent">
+                        <ImageView style="@style/DashboardStatIcon" android:src="@drawable/ic_dashboard_events" android:background="@drawable/stat_events_bg"/>
+                        <TextView android:id="@+id/tvEventsCount" style="@style/DashboardStatCount" android:text="0" android:textColor="@color/text_primary"/>
+                        <TextView style="@style/DashboardStatLabel" android:text="Events" android:textStyle="bold"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Jobs Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardJobs"
+                    style="@style/DashboardCard"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout style="@style/DashboardCardContent">
+                        <ImageView style="@style/DashboardStatIcon" android:src="@drawable/ic_dashboard_jobs" android:background="@drawable/stat_jobs_bg"/>
+                        <TextView android:id="@+id/tvJobsCount" style="@style/DashboardStatCount" android:text="0" android:textColor="@color/text_primary"/>
+                        <TextView style="@style/DashboardStatLabel" android:text="Jobs" android:textStyle="bold"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+            <!-- Management Tools -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Management"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView android:id="@+id/toolMentorships" style="@style/ManagementToolModern" android:drawableStart="@drawable/ic_dashboard_mentorships" android:text="Manage Mentorships" android:textStyle="bold"/>
+                    <View style="@style/Divider"/>
+                    <TextView android:id="@+id/toolDonations" style="@style/ManagementToolModern" android:drawableStart="@drawable/ic_dashboard_donations" android:text="Fund Campaigns" android:textStyle="bold"/>
+                    <View style="@style/Divider"/>
+                    <TextView android:id="@+id/toolAnnouncements" style="@style/ManagementToolModern" android:drawableStart="@drawable/ic_dashboard_announcements" android:text="Send Announcements" android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Recent Activity -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Recent Activity"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRecentActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_recent_activity"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

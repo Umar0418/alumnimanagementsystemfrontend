@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etPostContent"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/input_modern"
+        android:padding="16dp"
+        android:gravity="top"
+        android:hint="What's on your mind?"
+        android:textSize="14sp"
+        android:textColor="#1F2937"
+        android:textColorHint="#9CA3AF"
+        android:inputType="textMultiLine"/>
+
+</LinearLayout>

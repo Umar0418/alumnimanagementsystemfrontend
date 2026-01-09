@@ -1,0 +1,13 @@
+<resources>
+    <string-array name="target_audience_options">
+        <item>All Users</item>
+        <item>Alumni</item>
+        <item>Students</item>
+    </string-array>
+
+    <string-array name="availability_options">
+        <item>1-2 hours / week</item>
+        <item>3-5 hours / week</item>
+        <item>5+ hours / week</item>
+    </string-array>
+</resources>

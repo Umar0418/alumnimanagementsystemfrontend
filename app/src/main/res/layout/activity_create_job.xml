@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F9FAFB"
+    tools:context=".CreateJobActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tvScreenTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post New Job"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1F2937"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView style="@style/FormLabel" android:text="Job Title"/>
+            <EditText android:id="@+id/etJobTitle" style="@style/FormInput" android:hint="e.g. Software Engineer"/>
+
+            <TextView style="@style/FormLabel" android:text="Company"/>
+            <EditText android:id="@+id/etJobCompany" style="@style/FormInput" android:hint="e.g. Tech Corp"/>
+
+            <TextView style="@style/FormLabel" android:text="Location"/>
+            <EditText android:id="@+id/etJobLocation" style="@style/FormInput" android:hint="e.g. Remote / Bangalore"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView style="@style/FormLabel" android:text="Type"/>
+                    <EditText android:id="@+id/etJobType" style="@style/FormInput" android:hint="Full-time"/>
+                </LinearLayout>
+
+                <View android:layout_width="16dp" android:layout_height="0dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView style="@style/FormLabel" android:text="Salary Range"/>
+                    <EditText android:id="@+id/etJobSalary" style="@style/FormInput" android:hint="e.g. 10-15 LPA"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView style="@style/FormLabel" android:text="Description"/>
+            <EditText android:id="@+id/etJobDescription" style="@style/FormInput" android:hint="Job details..." android:gravity="top" android:lines="4"/>
+
+            <TextView style="@style/FormLabel" android:text="Apply By Date"/>
+            <TextView
+                android:id="@+id/tvJobLastDate"
+                style="@style/FormInput"
+                android:hint="mm/dd/yyyy"
+                android:drawableEnd="@drawable/ic_form_calendar"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnPostJob"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Post Job"
+                android:backgroundTint="#2563EB"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

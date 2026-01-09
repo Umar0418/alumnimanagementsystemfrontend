@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".AlumniManagementApp"
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Alumnimanagement"
+        tools:targetApi="31">
+
+        <!-- Main/Launcher Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login Activities -->
+        <activity android:name=".AdminLoginActivity" android:exported="false"/>
+        <activity android:name=".AlumniLoginActivity" android:exported="false"/>
+        <activity android:name=".StudentLoginActivity" android:exported="false"/>
+        <activity android:name=".AlumniRegisterActivity" android:exported="false"/>
+        <activity android:name=".StudentRegisterActivity" android:exported="false"/>
+        <activity android:name=".AdminRegisterActivity" android:exported="false"/>
+        <activity android:name=".ForgotPasswordActivity" android:exported="false"/>
+        <activity android:name=".ResetPasswordActivity" android:exported="false"/>
+        <activity android:name=".SubscriptionActivity" android:exported="false"/>
+
+        <!-- Admin Dashboard and Activities -->
+        <activity android:name=".AdminDashboardActivity" android:exported="false"/>
+        <activity android:name=".AdminEventsActivity" android:exported="false"/>
+        <activity android:name=".ManageEventsActivity" android:exported="false"/>
+        <activity android:name=".ManageMentorshipActivity" android:exported="false"/>
+        <activity android:name=".AdminFundsActivity" android:exported="false"/>
+        <activity android:name=".CreateCampaignActivity" android:exported="false"/>
+        <activity android:name=".AdminJobsActivity" android:exported="false"/>
+        <activity android:name=".CreateJobActivity" android:exported="false"/>
+        <activity android:name=".SendAnnouncementActivity" android:exported="false"/>
+        <activity android:name=".AdminAnnouncementsActivity" android:exported="false"/>
+        <activity android:name=".AlumniListActivity" android:exported="false"/>
+        <activity android:name=".StudentListActivity" android:exported="false"/>
+        <activity android:name=".CreateEventActivity" android:exported="false"/>
+
+        <!-- Alumni Dashboard and Activities -->
+        <activity android:name=".AlumniDashboardActivity" android:exported="false"/>
+        <activity android:name=".AlumniAnnouncementsActivity" android:exported="false"/>
+        <activity android:name=".AlumniDirectoryActivity" android:exported="false"/>
+        <activity android:name=".ViewAlumniProfileActivity" android:exported="false"/>
+        <activity android:name=".AlumniEventsActivity" android:exported="false"/>
+        <activity android:name=".AlumniJobsActivity" android:exported="false"/>
+        <activity android:name=".AlumniProfileActivity" android:exported="false"/>
+        <activity android:name=".EditAlumniProfileActivity" android:exported="false"/>
+        <activity android:name=".MyEventsActivity" android:exported="false"/>
+        <activity android:name=".PostJobReferralActivity" android:exported="false"/>
+        <activity android:name=".DonateActivity" android:exported="false"/>
+        <activity android:name=".CommunityGroupsActivity" android:exported="false"/>
+        <activity android:name=".CommunityPostsActivity" android:exported="false"/>
+
+        <!-- Mentorship Activities -->
+        <activity android:name=".ApplyMentorshipActivity" android:exported="false"/>
+        <activity android:name=".MentorshipStatusActivity" android:exported="false"/>
+        <activity android:name=".MentorshipDashboardActivity" android:exported="false"/>
+        <activity android:name=".RequestMentorshipActivity" android:exported="false"/>
+        <activity android:name=".MyMentorRequestsActivity" android:exported="false"/>
+
+        <!-- Event Activities -->
+        <activity android:name=".EventRegistrationActivity" android:exported="false"/>
+        <activity android:name=".EventDetailsActivity" android:exported="false"/>
+
+        <!-- Job Activities -->
+        <activity android:name=".JobDetailsActivity" android:exported="false"/>
+        <activity android:name=".JobApplicationActivity" android:exported="false"/>
+
+        <!-- Student Dashboard and Activities -->
+        <activity android:name=".StudentDashboardActivity" android:exported="false"/>
+        <activity android:name=".StudentEventsActivity" android:exported="false"/>
+        <activity android:name=".StudentJobsActivity" android:exported="false"/>
+        <activity android:name=".StudentJobDetailsActivity" android:exported="false"/>
+        <activity android:name=".StudentAnnouncementsActivity" android:exported="false"/>
+        <activity android:name=".StudentProfileActivity" android:exported="false"/>
+        <activity android:name=".EditStudentProfileActivity" android:exported="false"/>
+        <activity android:name=".StudentMentorshipActivity" android:exported="false"/>
+
+    </application>
+
+</manifest>

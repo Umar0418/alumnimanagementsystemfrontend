@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Row: Avatar, Info, Slots Badge -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Avatar with Initials -->
+            <TextView
+                android:id="@+id/tvMentorInitials"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/circle_light_blue"
+                android:gravity="center"
+                android:text="DC"
+                android:textColor="#2563EB"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <!-- Mentor Info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:id="@+id/tvMentorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="David Chen"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1F2937"/>
+
+                <TextView
+                    android:id="@+id/tvMentorRole"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Senior Engineer at Google"
+                    android:textSize="13sp"
+                    android:textColor="#6B7280"/>
+
+            </LinearLayout>
+
+            <!-- Slots Badge -->
+            <TextView
+                android:id="@+id/tvSlotsBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:background="@drawable/badge_slots_bg"
+                android:text="2 slots\nleft"
+                android:textSize="11sp"
+                android:textColor="#059669"
+                android:gravity="center"
+                android:lineSpacingExtra="-2dp"/>
+
+        </LinearLayout>
+
+        <!-- Skills Tags -->
+        <LinearLayout
+            android:id="@+id/skillsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/tvSkill1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:background="@drawable/skill_tag_bg"
+                android:text="Web Dev"
+                android:textSize="12sp"
+                android:textColor="#374151"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tvSkill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:background="@drawable/skill_tag_bg"
+                android:text="System Design"
+                android:textSize="12sp"
+                android:textColor="#374151"/>
+
+        </LinearLayout>
+
+        <!-- Bottom Row: Rating and Request Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp">
+
+            <!-- Rating -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="#F59E0B"/>
+
+                <TextView
+                    android:id="@+id/tvRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="4.9 (12 reviews)"
+                    android:textSize="12sp"
+                    android:textColor="#F59E0B"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <!-- Request Button -->
+            <Button
+                android:id="@+id/btnRequestMentorship"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:paddingHorizontal="20dp"
+                android:text="Request\nMentorship"
+                android:textSize="11sp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#2563EB"
+                android:textAllCaps="false"
+                android:lineSpacingExtra="-2dp"
+                app:cornerRadius="8dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
